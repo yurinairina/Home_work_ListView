@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">1ListView</string>
+    <string name="input_name">введите имя</string>
+    <string name="exsit">ВЫХОД</string>
+    <string name="filled_in_text">введите текст</string>
+    <string name="valid_name_text">имя</string>
+    <string name="valid_age_text">age stop</string>
+    <string name="input_age">введите возраст</string>
+    <string name="title_text">!!!</string>
+    <string name="exsit_text">работа программы завершена</string>
+    <string name="save">COХРАНИТЬ</string>
+</resources>
