@@ -6,8 +6,6 @@
         android:id="@+id/context_menuMain"
         android:orderInCategory="1"
         android:title="@string/exsit"
-
         app:showAsAction = "never"
         />
-
 </menu>
