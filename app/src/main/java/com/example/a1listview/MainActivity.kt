@@ -65,10 +65,24 @@ class MainActivity : AppCompatActivity() {
         }
         listView.onItemClickListener =
             MyDialog.createDialog(this, adapter)
-
-        
     }
 
+        // МЕНЮ
+        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+            menuInflater.inflate(R.menu.context_menu, menu)
+            return true
+        }
+        // МЕНЮ выход
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            if (item.itemId == R.id.context_menuMain) {
+                Toast.makeText(this, getString(R.string.exsit_text), Toast.LENGTH_LONG).show()
+                finish() //всплывающее сообщение
+            }
+            return super.onOptionsItemSelected(item)
+        }
+
+
+    }
 
 
 //                   }
@@ -84,32 +98,6 @@ class MainActivity : AppCompatActivity() {
 //    override fun remove(user: User?) {
 //        adapter?.remove(user)
 //           }
-    // МЕНЮ
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.context_menu, menu)
-        return true
-    }
-    // МЕНЮ выход
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.context_menuMain) {
-            Toast.makeText(this, getString(R.string.exsit_text), Toast.LENGTH_LONG).show()
-            finish() //всплывающее сообщение
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-
-}
-
-
-
-
-
-
-//Метод onOptionsItemSelected в Android
-// вызывается при нажатии пункта меню.
-// Он определяет, какой пункт меню был нажат.
-
 
 
 

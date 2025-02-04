@@ -15,8 +15,7 @@ class MyDialog {
             adapter: ArrayAdapter<String>
         ): AdapterView.OnItemClickListener =
             AdapterView.OnItemClickListener { parent, v, position, id ->
-                val user = adapter.getItem(position)
-                //Метод adapter.getItem(position) в Android означает, что он возвращает элемент данных на определённой позиции.
+                //val user = adapter.getItem(position)
                 val builder = AlertDialog.Builder(context)
                 builder
                     .setTitle("Внимание")
@@ -37,31 +36,3 @@ class MyDialog {
 }
 
 
-
-
-//    private var removable: Removable? = null
-//
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//        removable = context as Removable?
-//    }
-//       @SuppressLint("StringFormatInvalid")
-//       override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-//        val note =requireArguments().getString("note")
-//        val builder = AlertDialog.Builder(
-//            requireActivity()
-//        )
-//        return builder
-//            .setTitle("Внимание")
-//            .setMessage("Удалить $note")
-//            .setIcon(R.drawable.ic_delete)
-//               .setPositiveButton("Да") { dialog, which->
-//                removable?.remove(note.toString())
-//                //Toast.makeText(context, getString(R.string.user_deleted_text,note), Toast.LENGTH_SHORT).show()
-//            }
-//            .setNegativeButton("Нет", null)
-//            .create()
-//
-//    }
-//
-//}
