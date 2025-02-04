@@ -9,4 +9,9 @@
     <string name="title_text">!!!</string>
     <string name="exsit_text">работа программы завершена</string>
     <string name="save">COХРАНИТЬ</string>
+    <string name="del_text">Удалить пользователя?</string>
+    <string name="remove_text">Удалить совсем?</string>
+    <string name="yes_text">да</string>
+    <string name="user_deleted_text">чтото</string>
+    <string name="no_text">все удалено</string>
 </resources>
