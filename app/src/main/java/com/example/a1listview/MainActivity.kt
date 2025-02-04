@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.a1listview.MyDialog.Companion.createDialog
 import kotlin.collections.remove
 
 class MainActivity : AppCompatActivity() {
@@ -62,27 +63,11 @@ class MainActivity : AppCompatActivity() {
             input_ageET.text.clear()
             Toast.makeText(this, "Пользователь ${user.name} добавлен", Toast.LENGTH_SHORT).show()
         }
+        listView.onItemClickListener =
+            MyDialog.createDialog(this, adapter)
 
-        listView.onItemClickListener =  //вывод списка
-            AdapterView.OnItemClickListener { parent, v, position, id ->
-                // val user = adapter.getItem(position)
-//Метод adapter.getItem(position) в Android означает, что он возвращает элемент данных на определённой позиции.
-                val builder = AlertDialog.Builder(this)
-                builder.setTitle("Внимание")
-                    .setMessage("Удалить")
-                    .setCancelable(true)
-                    .setNegativeButton("Нет") { dialog, which ->
-                        dialog.cancel()
-                    }
-                    .setPositiveButton("Да") { dialog, which ->
-                        val note = adapter.getItem(position)
-                        adapter.remove(note)
-                        Toast.makeText(this, "Данные удалены:$note", Toast.LENGTH_LONG).show()
-                    }.create()
-                builder.show()
-            }
+        
     }
-
 
 
 
@@ -99,13 +84,11 @@ class MainActivity : AppCompatActivity() {
 //    override fun remove(user: User?) {
 //        adapter?.remove(user)
 //           }
-
     // МЕНЮ
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.context_menu, menu)
         return true
     }
-
     // МЕНЮ выход
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.context_menuMain) {
